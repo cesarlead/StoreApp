@@ -1,0 +1,18 @@
+eureka:
+  instance:
+    hostName: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+  eureka:
+    server:
+      # Por defecto es 0.85 (85%). Ajusta al porcentaje que necesites:
+      renewalPercentThreshold: 0.50
+      
+      # Cada cuánto (en ms) comprueba si expira instancias (por defecto 60_000)
+      evictionIntervalTimerInMs: 120000
+server:
+  port: 4042
+  
