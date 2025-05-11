@@ -1,0 +1,22 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:4041
+  application:
+    name: products-service
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5488/users?currentSchema=product_ms
+    username: appuser
+    password: ChangeMe123!
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+  
+
+
+  
+  
