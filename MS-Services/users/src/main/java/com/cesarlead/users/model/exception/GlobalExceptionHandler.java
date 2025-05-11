@@ -72,7 +72,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ProblemDetail> handleUnexpected(Exception ex) {
         ProblemDetail pd = createProblemDetail(HttpStatus.INTERNAL_SERVER_ERROR,
-                "Error interno del servidor", "Ocurrió un error inesperado", "/errors/internal");
+                "Error interno del servidor", ex.getMessage(), "/errors/internal");
         return ResponseEntity.status(pd.getStatus()).body(pd);
     }
 
