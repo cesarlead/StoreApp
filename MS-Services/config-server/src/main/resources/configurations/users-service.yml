@@ -1,11 +1,11 @@
 jpa:
   database-platform: org.hibernate.dialect.PostgreSQLDialect
-  show-sql:           false
+  show-sql: false
   hibernate:
     ddl-auto: none           # usar migraciones en lugar de auto-ddl
   properties:
     hibernate:
-      format_sql:    true
+      format_sql: true
       jdbc:
         lob:
           non_contextual_creation: true
@@ -17,12 +17,13 @@ jpa:
 
 logging:
   level:
-    org.hibernate.SQL:       WARN
+    org.hibernate.SQL: WARN
     org.hibernate.type.descriptor.sql.BasicBinder: ERROR
-    
+    org.springdoc: DEBUG
+
 server:
   port: 4043
-  
+
 eureka:
   instance:
     # Intervalo entre heartbeats (en segundos). Por defecto 30.
